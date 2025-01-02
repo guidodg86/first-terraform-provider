@@ -20,12 +20,13 @@ Each element will contain the following structure (provided one element as examp
 {
     "id": "8c9da44dd0c38dd2f6e1f9cb288bd6e8", // MD5 hash of the creation timestamp with timezone included
     "number": 25,
-    "string": "Velez Campeon 2024"
+    "string_data": "Velez Campeon 2024"
 }
 ```
+Empty strings are not allowed and number 0 are not allowed
 
 ### Updating data contitions
-Data updates will be allowed only if the number is to be change. If the user requires to change the string, needs to delete the element and create it again
+Data updates will be allowed only if the number is to be change. If the user requires to change the string_data, needs to delete the element and create it back again
 
 ### Api endpoints
 These are the API endpoints that are implemented

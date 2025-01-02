@@ -1,0 +1,23 @@
+ !Good request
+ curl -v -H 'Content-Type: application/json' \
+      -d '{ "string_data":"test 1","number": 10}' \
+      -X POST \
+      http://localhost:8080/create
+
+!Bad request (field error)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{ "string_dasta":"test 1","number": 10}' \
+      -X POST \
+      http://localhost:8080/create
+
+!Bad request (field error)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{ "string_data":"test 1","numbers": 3}' \
+      -X POST \
+      http://localhost:8080/create
+
+!Bad request (json malforming)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{ "string_dasta":test 1","number": 10}' \
+      -X POST \
+      http://localhost:8080/create
