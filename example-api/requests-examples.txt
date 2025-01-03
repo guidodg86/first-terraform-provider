@@ -1,6 +1,6 @@
  !Good request
  curl -v -H 'Content-Type: application/json' \
-      -d '{ "string_data":"test 1","number": 10}' \
+      -d '{ "string_data":"test 3","number": 201}' \
       -X POST \
       http://localhost:8080/create
 
@@ -16,8 +16,27 @@
       -X POST \
       http://localhost:8080/create
 
-!Bad request (json malforming)
+!Good Request (update)
  curl -v -H 'Content-Type: application/json' \
-      -d '{ "string_dasta":test 1","number": 10}' \
+      -d '{"number": 21}' \
       -X POST \
-      http://localhost:8080/create
+      http://localhost:8080/update/1bf8d770c9db3d6f22638609f4bff397
+
+
+!Bad Request (update) (not found)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{"number": 25}' \
+      -X POST \
+      http://localhost:8080/update/b8b8305f6960c7afc2e77429cf1dc3
+
+!Bad Request (update)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{"number: 25}' \
+      -X POST \
+      http://localhost:8080/update/b8b8305f6960c7afc2e77429cf1dc341
+
+!Good Request (delete)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{}' \
+      -X POST \
+      http://localhost:8080/delete/1bf8d770c9db3d6f22638609f4bff397
