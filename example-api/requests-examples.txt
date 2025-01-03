@@ -40,3 +40,9 @@
       -d '{}' \
       -X POST \
       http://localhost:8080/delete/1bf8d770c9db3d6f22638609f4bff397
+
+!Bad Request (delete)
+ curl -v -H 'Content-Type: application/json' \
+      -d '{}' \
+      -X POST \
+      http://localhost:8080/delete/1bf8d770c9db3d6f22638609f4bff3
